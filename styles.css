@@ -6,6 +6,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
 body {
     display: flex;
     justify-content: center;
@@ -98,6 +99,17 @@ header {
     color: #162938;
 }
 
+/* .welcome-msg{
+    position: relative;
+    border: 2px;
+    transform: scale(0);
+
+} */
+.welcome-msg h2{
+    font-size: 4em;
+    color: #162938;
+    text-align: right;
+}
 
 .wrapper {
     position: relative;
@@ -112,13 +124,56 @@ header {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    transition: .5s ease, height .2s ease;
+    transform: scale(0);
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
+}
+ 
+.wrapper.active{
+    width: 800px; /* Adjust width to accommodate the grid layout */
+    height: 700px; /* Change to auto to allow dynamic height based on content */
+}
+
+.input-box {
+    flex-basis: calc(33.33% - 20px); /* Adjust width of input boxes to fit 3 columns */
+    margin-bottom: 20px; /* Add margin between input boxes */
+}
+
+.input-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .wrapper .form-box{
     width: 100%;
     padding: 40px;
 }
-.wrapper .icon-close{
+.wrapper .form-box.login{
+  transition: transform .18s ease;
+  transform: translateX(0);
+}
+
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-4000px);
+}
+
+.wrapper .form-box.register{
+   position: absolute;
+   transition: none;
+   transform: translateX(4000px);
+}
+.wrapper.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+  }
+  
+
+.wrapper .icon-close {
     position: absolute;
     top: 0;
     right: 0;
@@ -150,7 +205,7 @@ header {
 }
 .input-box label{
     position: absolute;
-    top: 15px;
+    top: 3px;
     left: 5px;
     transform: translateY(-50%);
     font-size: 1em;
