@@ -1,21 +1,26 @@
 <?php
-session_start();
+// Include your database connection file
+include 'db_connection.php';
 
+// Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Database connection
-    $conn = new mysqli('localhost', 'root', '', 'vizzie_db');
-    if ($conn->connect_error) {
-        die("Connection Failed: " . $conn->connect_error);
-    }
+    // Validate input
+    // (You should add more validation and sanitization)
 
-    // Prepare and execute the SQL statement
-    $stmt = $conn->prepare("SELECT * FROM registration WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    // Query to check if user exists with given credentials
+    $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) == 1) {
+        // User authenticated
+        // Redirect or set session and redirect
+        header("Location: dashboard.php");
+    } else {
+        // Authentication failed
+        echo "Invalid email or password";
     }
+}
 ?>

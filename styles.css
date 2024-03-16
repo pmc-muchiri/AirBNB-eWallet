@@ -99,18 +99,6 @@ header {
     color: #162938;
 }
 
-/* .welcome-msg{
-    position: relative;
-    border: 2px;
-    transform: scale(0);
-
-} */
-.welcome-msg h2{
-    font-size: 4em;
-    color: #162938;
-    text-align: right;
-}
-
 .wrapper {
     position: relative;
     width: 400px;
@@ -301,7 +289,7 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: #333;
+    color: #162938;;
     padding: 40px;
     background: #f9f9f9;
     border-radius: 20px;
@@ -311,7 +299,8 @@ header {
 .content-home h1 {
     font-size: 36px;
     margin-bottom: 20px;
-    color: #555;
+    color: #162938;
+    ;
 }
 
 .content-home p {
@@ -323,7 +312,7 @@ header {
 .content-home a {
     display: inline-block;
     padding: 10px 20px;
-    background: #5b5d5f;
+    background: #162938;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -334,4 +323,29 @@ header {
     background: #fff;
     color: #162938;
 }
+
+footer {
+    background-color: #162938;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin-bottom: 10px;
+}
+
+.footer-content a {
+    color: #fff;
+}
+
 
