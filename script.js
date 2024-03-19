@@ -31,4 +31,17 @@ iconClose.addEventListener('click', () => {
 getStartedBtn.addEventListener('click', ()=>{
     wrapper.classList.add('active-popup');
     document.querySelector('.content-home').style.display = 'none';
-})
+});
+
+
+ // JavaScript to toggle password visibility
+ const showPasswordCheckbox = document.getElementById('showPassword');
+ const passwordField = document.getElementById('password');
+
+ showPasswordCheckbox.addEventListener('change', function () {
+     if (this.checked) {
+         passwordField.type = 'text';
+     } else {
+         passwordField.type = 'password';
+     }
+ });
